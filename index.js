@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("BFHL API is running! Use POST /bfhl");
+});
+
 app.post("/bfhl", (req, res) => {
     const data = req.body.data;
     if (!Array.isArray(data)) {
